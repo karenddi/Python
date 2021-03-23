@@ -1,16 +1,11 @@
 # Nie korzystając z funkcji wbudowanej min(),
 # napisz funkcję znajdującą minimalną wartość z 3 liczb. minimum_of(a, b, c).
 
-def minimum_of():
-    list_numbers = []
-    for i in range(0,3):
-        num = int(input("Give me a number: "))
-        list_numbers.append(num)
+def minimum_of_2(arg_1,  arg_2):
+    return arg_1 if arg_1 < arg_2 else arg_2
 
-    list_numbers.sort()
-    print("Minimum from your list is: ",list_numbers[0])
-    return list_numbers
 
-print("Welcome!")
-minimum_of()
-print("The end!")
+def minimum_of(a, b, c):
+    return minimum_of_2(c, minimum_of_2(a, b))
+
+print(minimum_of(17, 100, 12))

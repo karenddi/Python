@@ -45,5 +45,7 @@ while rundy > 0:
     user_choice = input("Wybierz  jedno - papier(p), kamień (k) lub nożyce (n) wpisując symbol:  ")
     comp_choice = random.choice(possibilities)
 
+
+
 points(user_choice, comp_choice)
 
