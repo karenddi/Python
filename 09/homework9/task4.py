@@ -4,7 +4,7 @@ def users_input():
     try:
 
         num = input("Give me a list of numbers seperated by , : ")
-        num = list(num.replace(",", ""))
+        num = list(num.split(","))
         numbers = []
 
         for n in num:
