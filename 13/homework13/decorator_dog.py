@@ -28,30 +28,36 @@ class Dog:
         self.age = age
         self.speed = speed
 
-    @speed_changing_decorator
 
-    def can_participate(self, name, age, speed):
 
-        if age < 10:
+    def can_participate(self):
+
+        if self.age < 10:
             print("Age of your dog allows him to partcipate in championships!")
         else:
             print("We are sorry :( Age of your dog does not allow him to partcipate in championships.")
-        if speed >= 40:
+        if self.speed >= 40:
             print("Your dog's speed is enough to partcipate in championships!")
         else:
             print("We are sorry. Your dog's speed is not enough to partcipate in championships!")
 
+    @classmethod
+    def speed_modify(cls, new_speed):
 
+        cls.min_speed = new_speed
 
 if __name__ == "__main__":
 
 
 
 
-    # dog1 = Dog("Sernik", 8, 43)
-    # print(dog1)
+    dog1 = Dog("Sernik", 8, 43)
+    dog2 = Dog("Figa", 2, 50)
 
-    dog = Dog.can_participate("Sernik", 8, 43)
+    dog1.can_participate()
+    dog1.speed_modify(20)
+    print(dog1.min_speed)
+    print(dog2.min_speed)
 
 
 

@@ -7,41 +7,40 @@
 
 class Robot:
 
+    def __init__(self, name, production_year):
+        self.name = name
+        self.production_year = production_year
 
- def __init__(self, name, production_year):
-  self.name = name
-  self.production_year = production_year
+    @property
+    def condition(self):
+
+        numbers = []
+
+        for x in str(self.production_year):
+            x = int(x)
+            numbers.append(x)
+
+        robot_condition = sum(numbers)
+
+        if robot_condition <= 5:
+            return "Seems ok"
+        elif 5 < robot_condition <= 10:
+            return "Honestly could be better!"
+        elif 10 < robot_condition <= 15:
+            return "Bad choice!"
+        elif robot_condition > 15:
+            return "Cheap & weak "
 
 
- def conditon(self, production_year):
 
-  numbers = []
-
-  for x in str(production_year):
-   x = int(x)
-   numbers.append(x)
-
-  robot_condition = sum(numbers)
-
-  if robot_condition <= 5:
-   print("Seems ok")
-  elif 5 < robot_condition <= 10:
-   print("Honestly could be better!")
-  elif 10 < robot_condition <= 15:
-   print("Bad choice!")
-  elif robot_condition > 15:
-   print("Cheap & weak ")
-
-  return robot_condition
 
 if __name__ == "__main__":
 
+    robot1 = Robot("Wallie", 1999)
+    print(robot1.condition)
+    print(robot1.name)
 
- robot1 = Robot("Wallie", 1999)
- robot1.conditon(robot1.production_year)
+    robot2 = Robot("Laila", 2001)
+    robot2.condition
 
- robot2 = Robot("Laila", 2001)
- robot1.conditon(robot2.production_year)
-
-
-
+#zadanie 6
